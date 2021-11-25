@@ -1,6 +1,7 @@
 import 'dart:collection';
 import 'dart:convert';
 import 'dart:convert';
+import 'dart:html';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -171,12 +172,13 @@ class _AddToCartState extends State<_AddToCart> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(onPressed: (){
-      isAdded = isAdded.toggle;
+      isAdded = isAdded;
+      setState(() {});
     },
       style: ButtonStyle(
       backgroundColor: MaterialStateProperty.all(Theme.of(context).buttonColor),
         shape: MaterialStateProperty.all(StadiumBorder())
-    ), child: ,
+    ), child: isAdded?Icon(Icons.done):Text("Add to cart"),
     );
   }
 }
