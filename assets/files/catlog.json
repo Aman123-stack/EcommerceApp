@@ -1,0 +1,63 @@
+{
+	"products":[
+		{
+			"id": "codepur001",
+			"name": "iphone 12 pro",
+			"desc": "Apple iphone 12th generation",
+			"price": 999,
+			"color": "#33505a",
+			"image": "https://www.91-img.com/gallery_images_uploads/e/d/ed5c062684de8f5ff3e0a83dc3faaf808698865b.JPG?tr=h-550,w-0,c-at_max"
+		},
+		{
+			"id": "codepur002",
+			"name": "Pixel 5",
+			"desc": "Google pixel phone 15th generation",
+			"price": 699,
+			"color": "#00ac51",
+			"image": "https://www.notebookcheck.net/typo3temp/_processed_/b/2/csm_4_zu_3_Teaser_Google_Pixel_5_ab99411c8f.jpg"
+		},
+		{
+			"id": "codepur003",
+			"name": "M1 mackbook air",
+			"desc": "apple mackbook air with apple silicon",
+			"price": 1099,
+			"color": "#e0bfae",
+			"image": "https://cdn.vox-cdn.com/thumbor/8nKDePx7X7J01w1SXf-hv-DuZWc=/0x0:2040x1358/1720x0/filters:focal(0x0:2040x1358):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/22048042/vpavic_4291_20201113_0337_Edit.jpg"
+		},
+		{
+
+			"id": "codepur004",
+			"name": "play station 5",
+			"desc": "sony play station 5th generation",
+			"price": 500,
+			"color": "#544ee4",
+			"image": "https://www.isolvedit.me/wp-content/uploads/2020/11/playstation-5-with-dualsense-front-product-shot-01-ps5-en-30jul20.png"
+		},
+		{
+			"id": "5",
+			"name": "Airpods pro",
+			"desc": "Airpods pro 1st generation",
+			"price": 200,
+			"color": "#e3e4e9",
+			"image": "https://images-na.ssl-images-amazon.com/images/I/71zny7BTRlL.__AC_SY445_SX342_QL70_FMwebp_.jpg"
+		},
+		{
+			"id": "6",
+			"name": "Airpods pro ",
+			"desc": "Airpods pro 1st generation",
+			"price": 200,
+			"color": "#e3e4e9",
+			"image": "https://images-na.ssl-images-amazon.com/images/I/71zny7BTRlL.__AC_SY445_SX342_QL70_FMwebp_.jpg"
+		},
+
+		{
+			"id": "7",
+			"name": "Galaxy S21",
+			"desc": "Samsung Galaxy s21 2021 edition",
+			"price": 1200,
+			"color": "#1c1c1c",
+			"image": "https://media.wired.com/photos/6008b7cd103a85a519187c3e/master/w_2560%2Cc_limit/Gear-galaxys21_plus_phantom_silver_front.jpg"
+		}
+
+	]	
+}
