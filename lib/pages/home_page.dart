@@ -157,7 +157,31 @@ class CatlogItem extends StatelessWidget {
         ),
     );
   }
+  
 }
+class _AddToCart extends StatefulWidget {
+  const _AddToCart({Key? key}) : super(key: key);
+
+  @override
+  _AddToCartState createState() => _AddToCartState();
+}
+
+class _AddToCartState extends State<_AddToCart> {
+  bool isAdded = false;
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(onPressed: (){
+      isAdded = isAdded.toggle;
+    },
+      style: ButtonStyle(
+      backgroundColor: MaterialStateProperty.all(Theme.of(context).buttonColor),
+        shape: MaterialStateProperty.all(StadiumBorder())
+    ), child: ,
+    );
+  }
+}
+
+
 
 
 
