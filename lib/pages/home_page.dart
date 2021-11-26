@@ -1,7 +1,6 @@
 import 'dart:collection';
 import 'dart:convert';
 import 'dart:convert';
-import 'dart:html';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -132,14 +131,7 @@ class CatlogItem extends StatelessWidget {
                         children: [
                            Text("\$${catlog.price}",style: TextStyle(fontWeight: FontWeight.bold),
                            ),
-                          ElevatedButton(onPressed: (){},
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(Theme.of(context).buttonColor),
-                                shape: MaterialStateProperty.all(StadiumBorder()),
-
-                              ),
-
-                              child:Text("Buy"))
+                          _AddToCart()
                         ],
                       ),
 
@@ -172,13 +164,13 @@ class _AddToCartState extends State<_AddToCart> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(onPressed: (){
-      isAdded = isAdded;
+      isAdded=true;
       setState(() {});
     },
       style: ButtonStyle(
       backgroundColor: MaterialStateProperty.all(Theme.of(context).buttonColor),
         shape: MaterialStateProperty.all(StadiumBorder())
-    ), child: isAdded?Icon(Icons.done):Text("Add to cart"),
+    ), child: isAdded?Icon(Icons.done):Text("Buy"),
     );
   }
 }
