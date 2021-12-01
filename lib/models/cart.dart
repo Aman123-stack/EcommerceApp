@@ -1,6 +1,9 @@
 import 'package:testapp/models/catalog.dart';
 
-class cartmodel{
+class Cartmodel{
+  static final cartmodel= Cartmodel._internal();
+  Cartmodel._internal();
+  factory Cartmodel()=> cartmodel;
   late Catalogmodel _catlog;
   final List<int> _itemids = [];
 
@@ -16,7 +19,7 @@ class cartmodel{
 
 
   void add(Item item){
-    _itemids.add(int.parse(item.id));
+    _itemids.add(item.id);
   }
   
   void remove(Item item){

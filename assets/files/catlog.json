@@ -1,7 +1,7 @@
 {
 	"products":[
 		{
-			"id": "codepur001",
+			"id": 1,
 			"name": "iphone 12 pro",
 			"desc": "Apple iphone 12th generation",
 			"price": 999,
@@ -9,7 +9,7 @@
 			"image": "https://www.91-img.com/gallery_images_uploads/e/d/ed5c062684de8f5ff3e0a83dc3faaf808698865b.JPG?tr=h-550,w-0,c-at_max"
 		},
 		{
-			"id": "codepur002",
+			"id": 2,
 			"name": "Pixel 5",
 			"desc": "Google pixel phone 15th generation",
 			"price": 699,
@@ -17,7 +17,7 @@
 			"image": "https://www.notebookcheck.net/typo3temp/_processed_/b/2/csm_4_zu_3_Teaser_Google_Pixel_5_ab99411c8f.jpg"
 		},
 		{
-			"id": "codepur003",
+			"id": 3,
 			"name": "M1 mackbook air",
 			"desc": "apple mackbook air with apple silicon",
 			"price": 1099,
@@ -26,7 +26,7 @@
 		},
 		{
 
-			"id": "codepur004",
+			"id": 4,
 			"name": "play station 5",
 			"desc": "sony play station 5th generation",
 			"price": 500,
@@ -34,7 +34,7 @@
 			"image": "https://www.isolvedit.me/wp-content/uploads/2020/11/playstation-5-with-dualsense-front-product-shot-01-ps5-en-30jul20.png"
 		},
 		{
-			"id": "5",
+			"id": 5,
 			"name": "Airpods pro",
 			"desc": "Airpods pro 1st generation",
 			"price": 200,
@@ -42,7 +42,7 @@
 			"image": "https://images-na.ssl-images-amazon.com/images/I/71zny7BTRlL.__AC_SY445_SX342_QL70_FMwebp_.jpg"
 		},
 		{
-			"id": "6",
+			"id": 6,
 			"name": "Airpods pro ",
 			"desc": "Airpods pro 1st generation",
 			"price": 200,
@@ -51,7 +51,7 @@
 		},
 
 		{
-			"id": "7",
+			"id": 7,
 			"name": "Galaxy S21",
 			"desc": "Samsung Galaxy s21 2021 edition",
 			"price": 1200,

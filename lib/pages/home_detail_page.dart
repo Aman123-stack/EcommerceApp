@@ -40,7 +40,7 @@ class HomeDetailsPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(32.0),
               child: Hero(
-                tag: Key(catlog.id),
+                tag: Key(catlog.id.toString()),
                   child: Image.network(catlog.image)
               ),
             ),

@@ -5,10 +5,15 @@
 import 'package:meta/meta.dart';
 import 'dart:convert';
 
+import 'package:testapp/models/cart.dart';
+
 Item itemFromJson(String str) => Item.fromJson(json.decode(str));
 
 String itemToJson(Item data) => json.encode(data.toJson());
 class Catalogmodel{
+  static final catmodel= Catalogmodel._internal();
+  Catalogmodel._internal();
+  factory Catalogmodel()=> catmodel;
   static List<Item> items = [];
 
   Item getById(int id) =>
@@ -28,7 +33,7 @@ class Item {
     required this.image,
   });
 
-  String id;
+  int id;
   String name;
   String desc;
   int price;

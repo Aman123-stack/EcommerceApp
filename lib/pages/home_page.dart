@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:testapp/models/cart.dart';
 import 'package:testapp/models/catalog.dart';
 import 'package:testapp/utils/routes.dart';
 import 'package:testapp/widgets/drawer.dart';
@@ -97,7 +98,7 @@ class CatlogItem extends StatelessWidget {
                   padding: const EdgeInsets.all(40.0),
                   child:  Container(
                     child: Hero(
-                      tag: Key(catlog.id),
+                      tag: Key(catlog.id.toString()),
                         child: Image.network(catlog.image),
                     ),
                     decoration: BoxDecoration(
@@ -113,7 +114,8 @@ class CatlogItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(catlog.name,
+                    Text(
+                      catlog.name,
                     style: TextStyle(
                       color: Colors.blue,
                       fontWeight: FontWeight.bold
@@ -131,7 +133,7 @@ class CatlogItem extends StatelessWidget {
                         children: [
                            Text("\$${catlog.price}",style: TextStyle(fontWeight: FontWeight.bold),
                            ),
-                          _AddToCart()
+                          _AddToCart(catlog: catlog)
                         ],
                       ),
 
@@ -153,7 +155,8 @@ class CatlogItem extends StatelessWidget {
   
 }
 class _AddToCart extends StatefulWidget {
-  const _AddToCart({Key? key}) : super(key: key);
+  final Item catlog;
+  const _AddToCart({Key? key, required this.catlog}) : super(key: key);
 
   @override
   _AddToCartState createState() => _AddToCartState();
@@ -165,6 +168,10 @@ class _AddToCartState extends State<_AddToCart> {
   Widget build(BuildContext context) {
     return ElevatedButton(onPressed: (){
       isAdded=true;
+      final _catlog = Catalogmodel();
+      final _cart = Cartmodel();
+      _cart.catlog = _catlog;
+      _cart.add(widget.catlog);
       setState(() {});
     },
       style: ButtonStyle(

@@ -18,7 +18,7 @@ class CartPage extends StatelessWidget {
         children: [
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(32.0),
+              padding: const EdgeInsets.all(10.0),
               child: _cartListState(),
             ),
           ),
@@ -37,7 +37,7 @@ class _cartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _cart = cartmodel();
+    final _cart = Cartmodel();
     return SizedBox(
       height: 200,
       child: Row(
@@ -72,7 +72,7 @@ class _cartListState extends StatefulWidget {
 }
 
 class _cartListStateState extends State<_cartListState> {
-  final _cart = cartmodel();
+  final _cart = Cartmodel();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
