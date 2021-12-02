@@ -1,29 +1,45 @@
+
 import 'package:testapp/models/catalog.dart';
+import 'package:testapp/pages/cart_page.dart';
+class CartModel {
+  static final cartModel = CartModel._internal(Catalogmodel());
 
-class Cartmodel{
-  static final cartmodel= Cartmodel._internal();
-  Cartmodel._internal();
-  factory Cartmodel()=> cartmodel;
-  late Catalogmodel _catlog;
-  final List<int> _itemids = [];
+  CartModel._internal(this._catalog);
 
-  Catalogmodel get catlog => _catlog;
-  set catlog(Catalogmodel newcatlog){
-    newcatlog = _catlog;
+  factory CartModel() => cartModel;
+
+  // catalog field
+   Catalogmodel _catalog;
+
+
+  // Collection of IDs - store Ids of each item
+  final List<int> _itemIds = [];
+
+  // Get Catalog
+  Catalogmodel get catalog => _catalog;
+
+  set catalog(Catalogmodel newCatalog)  {
+    assert(newCatalog != null);
+    _catalog = newCatalog;
   }
 
-  List<Item> get items => _itemids.map((id)=> _catlog.getById(id)).toList();
+  // Get items in the cart
+  List<Item> get items => _itemIds.map((id) => _catalog.getById(id)).toList();
 
-  num get totalPrice=>
-      items.fold(0,(total,current)=>total+current.price);
+  // Get total price
+  num get totalPrice =>
+      items.fold(0, (total, current) => total + current.price);
 
+  // Add Item
 
-  void add(Item item){
-    _itemids.add(item.id);
+  void add(Item item) {
+    _itemIds.add(item.id);
   }
-  
-  void remove(Item item){
-    _itemids.remove(item.id);
+
+  // Remove Item
+
+  void remove(Item item) {
+    _itemIds.remove(item.id);
   }
 
 }

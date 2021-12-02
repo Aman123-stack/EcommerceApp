@@ -37,7 +37,7 @@ class _cartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _cart = Cartmodel();
+    final _cart = CartModel();
     return SizedBox(
       height: 200,
       child: Row(
@@ -72,7 +72,7 @@ class _cartListState extends StatefulWidget {
 }
 
 class _cartListStateState extends State<_cartListState> {
-  final _cart = Cartmodel();
+  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

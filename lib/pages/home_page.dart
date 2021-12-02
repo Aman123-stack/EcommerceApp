@@ -169,8 +169,8 @@ class _AddToCartState extends State<_AddToCart> {
     return ElevatedButton(onPressed: (){
       isAdded=true;
       final _catlog = Catalogmodel();
-      final _cart = Cartmodel();
-      _cart.catlog = _catlog;
+      final _cart = CartModel();
+      _cart.catalog = _catlog;
       _cart.add(widget.catlog);
       setState(() {});
     },

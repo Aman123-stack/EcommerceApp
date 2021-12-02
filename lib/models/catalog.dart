@@ -36,7 +36,7 @@ class Item {
   int id;
   String name;
   String desc;
-  int price;
+  num price;
   String color;
   String image;
 
