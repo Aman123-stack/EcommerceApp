@@ -1,15 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:testapp/core/store.dart';
 import 'package:testapp/pages/cart_page.dart';
 import 'package:testapp/pages/home_detail_page.dart';
 import 'package:testapp/pages/home_page.dart';
 import 'package:testapp/pages/login_pages.dart';
 import 'package:testapp/utils/routes.dart';
 import 'package:testapp/widgets/themes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(VxState(store:MyStore(),child: MyApp()));
 }
 
  class MyApp extends StatelessWidget {

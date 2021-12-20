@@ -11,9 +11,6 @@ Item itemFromJson(String str) => Item.fromJson(json.decode(str));
 
 String itemToJson(Item data) => json.encode(data.toJson());
 class Catalogmodel{
-  static final catmodel= Catalogmodel._internal();
-  Catalogmodel._internal();
-  factory Catalogmodel()=> catmodel;
   static List<Item> items = [];
 
   Item getById(int id) =>

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:testapp/core/store.dart';
 import 'package:testapp/models/cart.dart';
 import 'package:testapp/widgets/themes.dart';
+import 'package:velocity_x/velocity_x.dart';
 class CartPage extends StatelessWidget {
   const CartPage({Key? key}) : super(key: key);
 
@@ -43,11 +45,19 @@ class _cartTotal extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            "\$${_cart.totalPrice}",style: TextStyle(
-            fontSize: 15,
-            color: Theme.of(context).accentColor,
-          ),
+          VxConsumer(
+          notifications: {},
+          mutations:{RemoveMutation},
+        builder: (BuildContext context,store,VxStatus? status){
+          return "\$${_cart.totalPrice}"
+              .text
+              .xl5
+              .color(context.theme.accentColor)
+              .make();
+        },
+
+
+
           ),
           ElevatedButton(
               onPressed: (){
@@ -64,27 +74,24 @@ class _cartTotal extends StatelessWidget {
     );
   }
 }
-class _cartListState extends StatefulWidget {
-  const _cartListState({Key? key}) : super(key: key);
-
-  @override
-  _cartListStateState createState() => _cartListStateState();
-}
-
-class _cartListStateState extends State<_cartListState> {
-  final _cart = CartModel();
+class _cartListState extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    VxState.watch(context, on:[RemoveMutation]);
+    final CartModel _cart=(VxState.store as MyStore).cart;
+     return _cart.items.isEmpty?Text("Nothing to show",textAlign: TextAlign.center,style: TextStyle(fontSize: 16,),):ListView.builder(
       itemCount: _cart.items.length,
         itemBuilder:(context,index)=>ListTile(
           leading: Icon(Icons.done),
           trailing: IconButton(
             icon: Icon(Icons.remove_circle_outline),
-            onPressed: (){},
+            onPressed: (){
+              RemoveMutation(_cart.items[index]);
+            },
           ),
           title: Text(_cart.items[index].name),
         ));
+
   }
 }
 

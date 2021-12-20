@@ -1,15 +1,11 @@
-import 'dart:collection';
-import 'dart:convert';
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:testapp/models/cart.dart';
 import 'package:testapp/models/catalog.dart';
 import 'package:testapp/utils/routes.dart';
-import 'package:testapp/widgets/drawer.dart';
+import 'package:testapp/widgets/home_widgets/add_to_cart.dart';
 import 'package:testapp/widgets/home_widgets/catalog_list.dart';
-import 'package:testapp/widgets/item_widget.dart';
 import 'package:testapp/widgets/themes.dart';
 
 
@@ -110,6 +106,7 @@ class CatlogItem extends StatelessWidget {
                 ),
                 SizedBox(height: 20,),
                 Expanded(
+                  flex: 3,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -121,7 +118,7 @@ class CatlogItem extends StatelessWidget {
                       fontWeight: FontWeight.bold
                     ),
                     ),
-                    SizedBox(height: 5,),
+                    SizedBox(height: 3,),
                     Text(catlog.desc,style: TextStyle(
                       fontWeight: FontWeight.normal,
                       fontSize: 10
@@ -133,7 +130,7 @@ class CatlogItem extends StatelessWidget {
                         children: [
                            Text("\$${catlog.price}",style: TextStyle(fontWeight: FontWeight.bold),
                            ),
-                          _AddToCart(catlog: catlog)
+                          AddToCart(catlog: catlog,)
                         ],
                       ),
 
@@ -154,33 +151,9 @@ class CatlogItem extends StatelessWidget {
   }
   
 }
-class _AddToCart extends StatefulWidget {
-  final Item catlog;
-  const _AddToCart({Key? key, required this.catlog}) : super(key: key);
 
-  @override
-  _AddToCartState createState() => _AddToCartState();
-}
 
-class _AddToCartState extends State<_AddToCart> {
-  bool isAdded = false;
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: (){
-      isAdded=true;
-      final _catlog = Catalogmodel();
-      final _cart = CartModel();
-      _cart.catalog = _catlog;
-      _cart.add(widget.catlog);
-      setState(() {});
-    },
-      style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all(Theme.of(context).buttonColor),
-        shape: MaterialStateProperty.all(StadiumBorder())
-    ), child: isAdded?Icon(Icons.done):Text("Buy"),
-    );
-  }
-}
+
 
 
 

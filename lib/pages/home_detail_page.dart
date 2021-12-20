@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:testapp/models/catalog.dart';
+import 'package:testapp/widgets/home_widgets/add_to_cart.dart';
 import 'package:testapp/widgets/themes.dart';
 
 
@@ -22,13 +23,7 @@ class HomeDetailsPage extends StatelessWidget {
             children: [
               Text("\$${catlog.price}",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.redAccent,fontSize: 16),
               ),
-                ElevatedButton(onPressed: (){},
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Mytheme.bluish),
-                      shape: MaterialStateProperty.all(StadiumBorder())
-                    ),
-                    child: Text("Add to cart")
-                )
+               AddToCart(catlog: catlog)
             ],
           ),
         ),
